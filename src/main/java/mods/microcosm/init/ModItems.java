@@ -15,7 +15,9 @@ public class ModItems
     {
         bugSwatter = new ItemBugSwatter(1, 100, "bug_swatter");
         berryBland = new ItemBerryBland(64,0,"bland_berry");
+
         register(bugSwatter);
+        register(berryBland);
     }
 
     private static void register(Item item)
