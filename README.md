@@ -7,4 +7,4 @@ A potpourri of ideas.
 
 ~~Formatting this readme is similar to Discord.~~
 
-_IntelliJ also has some formatting features._
+_IntelliJ also has some basic formatting features._
