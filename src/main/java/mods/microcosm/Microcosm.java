@@ -1,6 +1,8 @@
 package mods.microcosm;
 
 import mods.microcosm.creativetab.CreativeTabMicrocosm;
+import mods.microcosm.init.ModBlocks;
+import mods.microcosm.init.ModItems;
 import mods.microcosm.lib.Reference;
 import mods.microcosm.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
@@ -28,6 +30,10 @@ public class Microcosm
     @Mod.EventHandler
     public void preInitialize(FMLPreInitializationEvent event)
     {
+        ModItems.init();
+        ModBlocks.init();
+        ModBlocks.initTE();
+
         proxy.preInit(event);
     }
 
