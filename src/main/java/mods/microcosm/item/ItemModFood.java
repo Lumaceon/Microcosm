@@ -9,14 +9,12 @@ import net.minecraft.util.text.translation.I18n;
 
 public class ItemModFood extends ItemFood implements ISimpleNamed
 {
-
     protected String simpleName;
     public ItemModFood(int amount, float saturation, boolean isWolfFood, String name){
 
         super(amount, saturation, isWolfFood);
 
         this.setCreativeTab(Microcosm.instance.CREATIVE_TAB);
-
         this.simpleName = name;
         this.setRegistryName(name);
         this.setUnlocalizedName(name);
