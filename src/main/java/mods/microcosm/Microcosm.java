@@ -1,5 +1,6 @@
 package mods.microcosm;
 
+import mods.microcosm.client.GuiHandler;
 import mods.microcosm.creativetab.CreativeTabMicrocosm;
 import mods.microcosm.init.ModBlocks;
 import mods.microcosm.init.ModItems;
@@ -42,6 +43,8 @@ public class Microcosm
     {
         ModItems.initModels();
         ModBlocks.initModels();
+
+        new GuiHandler();
 
         proxy.init(event);
     }

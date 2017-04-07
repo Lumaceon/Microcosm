@@ -1,14 +1,15 @@
 #Item
 
-item.microcosm:berryBland.name=Bland Berry
-item.microcosm:berryBoost.name=Boost Berry
-item.microcosm:berryHasty.name=Hasty Berry
-item.microcosm:bug_swatter.name=Bug Swatter
-item.microcosm:pot.name=Pot
+microcosm:berryBland=Bland Berry
+microcosm:berryBoost=Boost Berry
+microcosm:berryHasty=Hasty Berry
+microcosm:bug_swatter=Bug Swatter
+microcosm:pot=Pot
 
 #Block
 
-tile.microcosm:ore_test.name=Test Ore
+microcosm:ore_test.name=Test Ore
+microcosm:chimerical_alloy_furnace.name=Chimerical Alloy Furnace
 
 #Misc Localizations
 itemGroup.Microcosm=Microcosm

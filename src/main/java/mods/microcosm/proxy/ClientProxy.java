@@ -1,5 +1,6 @@
 package mods.microcosm.proxy;
 
+import mods.microcosm.client.GuiHandler;
 import mods.microcosm.client.render.ModelRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
