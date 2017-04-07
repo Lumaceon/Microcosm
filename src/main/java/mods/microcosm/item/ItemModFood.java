@@ -2,7 +2,6 @@ package mods.microcosm.item;
 
 import mods.microcosm.Microcosm;
 import mods.microcosm.util.ISimpleNamed;
-
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.translation.I18n;
@@ -11,7 +10,6 @@ public class ItemModFood extends ItemFood implements ISimpleNamed
 {
     protected String simpleName;
     public ItemModFood(int amount, float saturation, boolean isWolfFood, String name){
-
         super(amount, saturation, isWolfFood);
 
         this.setCreativeTab(Microcosm.instance.CREATIVE_TAB);
