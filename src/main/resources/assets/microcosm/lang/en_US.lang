@@ -1,0 +1,11 @@
+#Item
+
+item.microcosm:bug_swatter.name=Bug Swatter
+
+#Block
+
+tile.microcosm:ore_test.name=Test Ore
+
+#Misc Localizations
+itemGroup.Microcosm=Microcosm
+key.microcosm.category=Microcosm

@@ -40,6 +40,9 @@ public class Microcosm
     @Mod.EventHandler
     public void initialize(FMLInitializationEvent event)
     {
+        ModItems.initModels();
+        ModBlocks.initModels();
+
         proxy.init(event);
     }
 

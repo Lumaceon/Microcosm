@@ -1,0 +1,6 @@
+{
+    "parent": "microcosm:item/standard",
+    "textures": {
+        "layer0": "microcosm:item/bug_swatter"
+    }
+}
