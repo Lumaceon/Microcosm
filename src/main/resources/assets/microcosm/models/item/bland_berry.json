@@ -1,6 +1,0 @@
-{
-    "parent": "microcosm:item/standard",
-    "textures": {
-        "layer0": "microcosm:item/bland_berry"
-    }
-}

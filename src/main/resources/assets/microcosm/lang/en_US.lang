@@ -1,7 +1,9 @@
 #Item
 
+item.microcosm:berryBland.name=Bland Berry
+item.microcosm:berryHasty.name=Hasty Berry
 item.microcosm:bug_swatter.name=Bug Swatter
-item.microcosm:bland_berry.name=Bland Berry
+item.microcosm:pot.name=Pot
 
 #Block
 
