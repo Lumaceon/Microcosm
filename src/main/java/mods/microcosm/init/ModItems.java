@@ -4,6 +4,7 @@ import mods.microcosm.Microcosm;
 import mods.microcosm.util.ISimpleNamed;
 
 import mods.microcosm.item.ItemBerryBland;
+import mods.microcosm.item.ItemBerryBoost;
 import mods.microcosm.item.ItemBerryHasty;
 import mods.microcosm.item.ItemBugSwatter;
 import mods.microcosm.item.ItemPot;
@@ -20,6 +21,7 @@ public class ModItems
 
 	// let's try to keep these alphabetical for sanity's sake.
     public static Item berryBland;
+	public static Item berryBoost;
 	public static Item berryHasty;
     public static Item bugSwatter;
     public static Item pot;
@@ -27,12 +29,14 @@ public class ModItems
     public static void init()
     {
         berryBland = new ItemBerryBland(2,0.3F,false,"berryBland");
+		berryBoost = new ItemBerryBoost(2,0.3F,false,"berryBoost");
 		berryHasty = new ItemBerryHasty(2,0.3F,false,"berryHasty");
 		bugSwatter = new ItemBugSwatter(1, 100, "bug_swatter");
         pot = new ItemPot(1,200,"pot");
 		
-        register(berryHasty);
         register(berryBland);
+		register(berryBoost);
+        register(berryHasty);
 		register(bugSwatter);
         register(pot);
     }
