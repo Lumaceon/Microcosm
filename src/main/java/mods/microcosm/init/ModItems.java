@@ -22,12 +22,10 @@ public class ModItems
     public static void init()
     {
         bugSwatter = new ItemBugSwatter(1, 100, "bug_swatter");
-        berryBland = new ItemBerryBland(64,0,"bland_berry");
+        berryBland = new ItemBerryBland(2,0.3F,false,"bland_berry");
         pot = new ItemPot(1,200,"pot");
 
         register(bugSwatter);
-
-        berryBland = new ItemBerryBland(64, 0, "bland_berry");
         register(berryBland);
         register(pot);
 

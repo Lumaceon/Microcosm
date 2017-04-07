@@ -2,13 +2,11 @@ package mods.microcosm.item;
 
 import net.minecraft.item.EnumAction;
 
-public class ItemBerryBland extends ItemMod
+public class ItemBerryBland extends ItemModFood
 {
-    public ItemBerryBland(int maxStack, int maxDamage, String name) {
-        super(maxStack, maxDamage, name);
+    public ItemBerryBland(int amount, float saturation, boolean isWolfFood, String name) {
+        super(amount, saturation, isWolfFood, name);
     }
 
-    public EnumAction getItemUseAction() {
-        return EnumAction.NONE;
-    }
+
 }
