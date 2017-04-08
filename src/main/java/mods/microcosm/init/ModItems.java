@@ -20,9 +20,13 @@ public class ModItems
 
 	// let's try to keep these alphabetical for sanity's sake.
     public static Item berryBoost;
+    public static Item berryFire;
 	public static Item berryHasty;
-    public static Item berryIcy;
+	public static Item berryNight;
     public static Item berryRegen;
+    public static Item berrySpeed;
+    public static Item berryStrength;
+    public static Item berryWater;
 
     public static Item bugSwatter;
     public static Item pot;
@@ -35,24 +39,40 @@ public class ModItems
         berryBoost = new ItemModSeedFood(2, 0.5F, Blocks.BEETROOTS, Blocks.FARMLAND,"berryBoost")
                 .setAlwaysEdible()
                 .setPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 300, 0), 1F);
+        berryFire = new ItemModSeedFood(2, 0.5F, Blocks.BEETROOTS, Blocks.SNOW,"berryFire")
+                .setAlwaysEdible()
+                .setPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 300, 0), 1F);
         berryHasty = new ItemModSeedFood(2, 0.5F, Blocks.BEETROOTS, Blocks.FARMLAND,"berryHasty")
                 .setAlwaysEdible()
                 .setPotionEffect(new PotionEffect(MobEffects.HASTE, 300, 0), 1F);
-        berryIcy = new ItemModSeedFood(2, 0.5F, Blocks.BEETROOTS, Blocks.SNOW,"berryIcy")
+        berryNight = new ItemModSeedFood(2, 0.5F, Blocks.BEETROOTS, Blocks.FARMLAND,"berryNight")
                 .setAlwaysEdible()
-                .setPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 300, 0), 1F);
+                .setPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 300, 0), 1F);
         berryRegen = new ItemModSeedFood(2, 0.5F, Blocks.BEETROOTS, Blocks.FARMLAND,"berryRegen")
                 .setAlwaysEdible()
                 .setPotionEffect(new PotionEffect(MobEffects.REGENERATION, 300, 0), 1F);
+        berrySpeed = new ItemModSeedFood(2, 0.5F, Blocks.BEETROOTS, Blocks.FARMLAND,"berrySpeed")
+                .setAlwaysEdible()
+                .setPotionEffect(new PotionEffect(MobEffects.SPEED, 300, 0), 1F);
+        berryStrength = new ItemModSeedFood(2, 0.5F, Blocks.BEETROOTS, Blocks.FARMLAND,"berryStrength")
+                .setAlwaysEdible()
+                .setPotionEffect(new PotionEffect(MobEffects.STRENGTH, 300, 0), 1F);
+        berryWater = new ItemModSeedFood(2, 0.5F, Blocks.BEETROOTS, Blocks.FARMLAND,"berryWater")
+                .setAlwaysEdible()
+                .setPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 300, 0), 1F);
 
         // register
         register(bugSwatter);
         register(pot);
 
 		register(berryBoost);
+        register(berryFire);
         register(berryHasty);
-        register(berryIcy);
+        register(berryNight);
         register(berryRegen);
+        register(berrySpeed);
+        register(berryStrength);
+        register(berryWater);
 
     }
 

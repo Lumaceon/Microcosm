@@ -2,12 +2,16 @@
 
 microcosm:berryBoost=Boost Berry
 microcosm:berryHasty=Hasty Berry
-microcosm:berryIcy=Icy Berry
+microcosm:berryFire=Fire Resistance Berry
+microcosm:berryNight=Night Vision Berry
 microcosm:berryRegen=Regeneration Berry
+microcosm:berrySpeed=Speed Berry
+microcosm:berryStrength=Strength Berry
+microcosm:berryWater=Waterbreathing Berry
 
 microcosm:bugSwatter=§dBug Swatter
 
-microcosm:pot=Pot
+microcosm:pot=§ePot
 
 #Block
 
