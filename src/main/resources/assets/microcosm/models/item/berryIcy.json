@@ -1,6 +1,6 @@
 {
     "parent": "microcosm:item/standard",
     "textures": {
-        "layer0": "microcosm:item/berryBland"
+        "layer0": "microcosm:item/berryIcy"
     }
 }

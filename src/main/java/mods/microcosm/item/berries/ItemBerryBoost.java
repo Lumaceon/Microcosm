@@ -1,5 +1,6 @@
-package mods.microcosm.item;
+package mods.microcosm.item.berries;
 
+import mods.microcosm.item.ItemModFood;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;

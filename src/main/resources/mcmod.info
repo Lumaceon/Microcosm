@@ -1,0 +1,21 @@
+[
+{
+  "modid": "microcosm",
+  "name": "Microcosm",
+  "description": "A buncha stuff thrown together. (╯°□°）╯︵ ┻━┻)",
+  "version": "1.10.2-0.1",
+  "mcversion": "1.10.2",
+  "url": "https://github.com/Lumaceon/Microcosm",
+  "updateUrl": "",
+  "authorList": [
+    "Lumaceon",
+    "Eruantien"
+  ],
+  "logoFile": "assets/microcosm/textures/microcosm.png",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]

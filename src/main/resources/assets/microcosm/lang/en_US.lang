@@ -1,9 +1,12 @@
 #Item
 
-microcosm:berryBland=Bland Berry
 microcosm:berryBoost=Boost Berry
 microcosm:berryHasty=Hasty Berry
-microcosm:bug_swatter=Bug Swatter
+microcosm:berryIcy=Icy Berry
+microcosm:berryRegen=Regeneration Berry
+
+microcosm:bugSwatter=§dBug Swatter
+
 microcosm:pot=Pot
 
 #Block
