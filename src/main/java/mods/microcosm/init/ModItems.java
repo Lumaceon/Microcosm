@@ -8,7 +8,6 @@ import mods.microcosm.item.ItemPot;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
