@@ -2,7 +2,7 @@
 	"forge_marker": 1,
 	"defaults": {
 		"textures": {
-			"all": "microcosm:blocks/ore_test"
+			"all": "microcosm:blocks/oreTest"
 	    },
 		"model": "cube_all",
 		"transform": "forge:default-block"
