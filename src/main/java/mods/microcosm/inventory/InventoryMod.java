@@ -48,8 +48,7 @@ public class InventoryMod implements IInventory
                 itemstack = this.inventory[index];
                 this.inventory[index] = null;
 
-                if(this.container != null)
-                    this.container.onCraftMatrixChanged(this);
+                onChange();
 
                 return itemstack;
             }
@@ -60,8 +59,7 @@ public class InventoryMod implements IInventory
                 if(this.inventory[index].stackSize == 0)
                     this.inventory[index] = null;
 
-                if(this.container != null)
-                    this.container.onCraftMatrixChanged(this);
+                onChange();
 
                 return itemstack;
             }
@@ -76,8 +74,7 @@ public class InventoryMod implements IInventory
         ItemStack item = inventory[index];
         inventory[index] = null;
 
-        if(this.container != null)
-            this.container.onCraftMatrixChanged(this);
+        onChange();
 
         return item;
     }
@@ -87,8 +84,7 @@ public class InventoryMod implements IInventory
     {
         this.inventory[index] = stack;
 
-        if(this.container != null)
-            this.container.onCraftMatrixChanged(this);
+        onChange();
     }
 
     @Override
@@ -134,8 +130,7 @@ public class InventoryMod implements IInventory
         for(int n = 0; n < inventory.length; n++)
             inventory[n] = null;
 
-        if(this.container != null)
-            this.container.onCraftMatrixChanged(this);
+        onChange();
     }
 
     @Override
@@ -151,5 +146,12 @@ public class InventoryMod implements IInventory
     @Override
     public ITextComponent getDisplayName() {
         return null;
+    }
+
+    protected void onChange()
+    {
+        if(this.container != null)
+            this.container.onCraftMatrixChanged(this);
+        markDirty();
     }
 }

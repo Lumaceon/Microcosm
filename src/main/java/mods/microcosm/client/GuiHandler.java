@@ -1,6 +1,8 @@
 package mods.microcosm.client;
 
 import mods.microcosm.Microcosm;
+import mods.microcosm.client.gui.GuiPot;
+import mods.microcosm.inventory.container.ContainerPot;
 import mods.microcosm.lib.GUIs;
 import mods.microcosm.microcosm.chimericalfurnace.TileChimericalAlloyFurnace;
 import mods.microcosm.microcosm.chimericalfurnace.client.gui.GuiChimericalFurnace;
@@ -23,9 +25,10 @@ public class GuiHandler implements IGuiHandler
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
     {
         TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
-        if(ID == GUIs.CHIMERICAL_ALLOY_FURNACE.ordinal() && te != null && te instanceof TileChimericalAlloyFurnace)
-        {
+        if(ID == GUIs.CHIMERICAL_ALLOY_FURNACE.ordinal() && te != null && te instanceof TileChimericalAlloyFurnace) {
             return new ContainerChimericalFurnace((TileChimericalAlloyFurnace) te, player);
+        } else if(ID == GUIs.POT.ordinal()) {
+            return new ContainerPot(player.inventory.getCurrentItem(), player);
         }
         return null;
     }
@@ -34,9 +37,10 @@ public class GuiHandler implements IGuiHandler
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
     {
         TileEntity te = world.getTileEntity(new BlockPos(x, y, z));
-        if(ID == GUIs.CHIMERICAL_ALLOY_FURNACE.ordinal() && te != null && te instanceof TileChimericalAlloyFurnace)
-        {
+        if(ID == GUIs.CHIMERICAL_ALLOY_FURNACE.ordinal() && te != null && te instanceof TileChimericalAlloyFurnace) {
             return new GuiChimericalFurnace((TileChimericalAlloyFurnace) te, player);
+        } else if(ID == GUIs.POT.ordinal()) {
+            return new GuiPot(player.inventory.getCurrentItem(), player);
         }
         return null;
     }

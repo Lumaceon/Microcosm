@@ -6,5 +6,5 @@ package mods.microcosm.lib;
  */
 public enum GUIs
 {
-    CHIMERICAL_ALLOY_FURNACE
+    POT, CHIMERICAL_ALLOY_FURNACE
 }
