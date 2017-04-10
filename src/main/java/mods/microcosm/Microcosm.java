@@ -2,11 +2,14 @@ package mods.microcosm;
 
 import mods.microcosm.client.GuiHandler;
 import mods.microcosm.creativetab.CreativeTabMicrocosm;
+import mods.microcosm.handler.WorldHandler;
 import mods.microcosm.init.ModBlocks;
 import mods.microcosm.init.ModItems;
 import mods.microcosm.lib.Reference;
 import mods.microcosm.proxy.CommonProxy;
-import net.minecraft.creativetab.CreativeTabs;
+import mods.microcosm.microcosm.chimericalfurnace.recipe.ChimericalAlloyRecipes;
+import mods.microcosm.recipe.Recipes;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -35,6 +38,8 @@ public class Microcosm
         ModBlocks.init();
         ModBlocks.initTE();
 
+        ChimericalAlloyRecipes.preInit();
+
         proxy.preInit(event);
     }
 
@@ -44,6 +49,9 @@ public class Microcosm
         ModItems.initModels();
         ModBlocks.initModels();
 
+        Recipes.init();
+        MinecraftForge.EVENT_BUS.register(new WorldHandler());
+
         new GuiHandler();
 
         proxy.init(event);
@@ -52,6 +60,7 @@ public class Microcosm
     @Mod.EventHandler
     public void postInitialize(FMLPostInitializationEvent event)
     {
+        ChimericalAlloyRecipes.postInit();
         proxy.postInit(event);
     }
 }

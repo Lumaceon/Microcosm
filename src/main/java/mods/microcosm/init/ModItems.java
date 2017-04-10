@@ -1,6 +1,7 @@
 package mods.microcosm.init;
 
 import mods.microcosm.Microcosm;
+import mods.microcosm.item.ItemMod;
 import mods.microcosm.item.ItemModSeedFood;
 import mods.microcosm.util.ISimpleNamed;
 import mods.microcosm.item.ItemBugSwatter;
@@ -10,6 +11,7 @@ import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.ArrayList;
 
@@ -29,6 +31,14 @@ public class ModItems
     public static Item berryWater;
 
     public static Item bugSwatter;
+
+    public static Item ingotAnimatanium;
+    public static Item ingotBrass;
+    public static Item ingotCopper;
+    public static Item ingotCosmic;
+    public static Item ingotSteel;
+    public static Item ingotZinc;
+
     public static Item pot;
 
     public static void init()
@@ -53,6 +63,13 @@ public class ModItems
         berryWater = new ItemModSeedFood(2, 0.5F, Blocks.BEETROOTS, Blocks.FARMLAND,"berryWater").setAlwaysEdible()
                 .setPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 300, 0), 1F);
 
+        ingotCosmic = new ItemMod(64, 100, "ingotCosmic");
+        ingotCopper = new ItemMod(64, 100, "ingotCopper");
+        ingotZinc = new ItemMod(64, 100, "ingotZinc");
+        ingotBrass = new ItemMod(64, 100, "ingotBrass");
+        ingotSteel = new ItemMod(64, 100, "ingotSteel");
+        ingotAnimatanium = new ItemMod(64, 100, "ingotAnimatanium");
+
         register(bugSwatter);
         register(pot);
 
@@ -64,6 +81,19 @@ public class ModItems
         register(berrySpeed);
         register(berryStrength);
         register(berryWater);
+
+        register(ingotCosmic);
+        register(ingotCopper);
+        register(ingotZinc);
+        register(ingotBrass);
+        register(ingotSteel);
+        register(ingotAnimatanium);
+        OreDictionary.registerOre("ingotCosmic", ingotCosmic);
+        OreDictionary.registerOre("ingotCopper", ingotCopper);
+        OreDictionary.registerOre("ingotZinc", ingotZinc);
+        OreDictionary.registerOre("ingotBrass", ingotBrass);
+        OreDictionary.registerOre("ingotSteel", ingotSteel);
+        OreDictionary.registerOre("ingotAnimatanium", ingotAnimatanium);
     }
 
     private static void register(Item item)

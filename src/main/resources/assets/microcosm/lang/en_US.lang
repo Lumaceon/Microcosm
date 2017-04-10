@@ -9,6 +9,13 @@ microcosm:berrySpeed=Speed Berry
 microcosm:berryStrength=Strength Berry
 microcosm:berryWater=Waterbreathing Berry
 
+microcosm:ingotCosmic=Cosmic Ingot
+microcosm:ingotCopper=Copper Ingot
+microcosm:ingotZinc=Zinc Ingot
+microcosm:ingotBrass=Brass Ingot
+microcosm:ingotSteel=Steel Ingot
+microcosm:ingotAnimatanium=Animatanium Ingot
+
 microcosm:bugSwatter=§dBug Swatter
 
 microcosm:pot=§ePot
