@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class ModItems
 {
     // we can't register these in preInit, so we store every registered Item in this and register them later.
-    public static ArrayList<Item> itemsForModel = new ArrayList<Item>(200);
+    public static ArrayList<Item> itemsForModel = new ArrayList<Item>();
 
 	// let's try to keep these alphabetical for sanity's sake.
     public static Item berryBoost;
@@ -70,6 +70,7 @@ public class ModItems
     {
         GameRegistry.register(item);
         itemsForModel.add(item);
+        Microcosm.instance.CREATIVE_TAB.itemsToDisplay.add(item);
     }
 
     public static void initModels()

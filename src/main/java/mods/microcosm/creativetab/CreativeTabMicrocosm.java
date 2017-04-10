@@ -5,6 +5,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import static mods.microcosm.init.ModBlocks.*;
@@ -13,6 +15,9 @@ import static mods.microcosm.init.ModItems.*;
 public class CreativeTabMicrocosm extends CreativeTabs
 {
     List<ItemStack> list;
+    public ArrayList<Item> itemsToDisplay = new ArrayList<Item>();
+    public ArrayList<Block> blocksToDisplay = new ArrayList<Block>();
+
 
     public CreativeTabMicrocosm(String label) {
         super(label);
@@ -38,22 +43,17 @@ public class CreativeTabMicrocosm extends CreativeTabs
     }
 
     @Override
-    public void displayAllRelevantItems(List<ItemStack> list){
+    public void displayAllRelevantItems(List<ItemStack> list)
+    {
         this.list = list;
 
-        addItem(bugSwatter);
-        addItem(pot);
-        addItem(berryBoost);
-        addItem(berryFire);
-        addItem(berryHasty);
-        addItem(berryNight);
-        addItem(berryRegen);
-        addItem(berrySpeed);
-        addItem(berryStrength);
-        addItem(berryWater);
+        for(Item i : itemsToDisplay)
+            if(i != null)
+                addItem(i);
 
-        addBlock(oreTest);
-        addBlock(chimericalAlloyFurnace);
+        for(Block i : blocksToDisplay)
+            if(i != null)
+                addBlock(i);
     }
 
 }

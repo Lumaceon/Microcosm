@@ -2,7 +2,7 @@
 	"forge_marker": 1,
 	"defaults": {
 		"textures": {
-			"all": "microcosm:blocks/oreTest"
+			"all": "microcosm:blocks/chimericalAlloyFurnace"
 	    },
 		"model": "cube_all",
 		"transform": "forge:default-block"

@@ -1,4 +1,4 @@
-#Item
+﻿#Item
 
 microcosm:berryBoost=Boost Berry
 microcosm:berryHasty=Hasty Berry
@@ -15,8 +15,10 @@ microcosm:pot=§ePot
 
 #Block
 
-microcosm:ore_test.name=Test Ore
-microcosm:chimerical_alloy_furnace.name=Chimerical Alloy Furnace
+microcosm:oreCopper.name=Copper Ore
+microcosm:oreZinc.name=Zinc Ore
+microcosm:oreCosmic=Cosmic Ore
+microcosm:chimericalAlloyFurnace.name=Chimerical Alloy Furnace
 
 #Misc Localizations
 itemGroup.Microcosm=Microcosm

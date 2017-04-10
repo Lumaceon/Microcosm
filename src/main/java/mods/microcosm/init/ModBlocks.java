@@ -1,8 +1,8 @@
 package mods.microcosm.init;
 
 import mods.microcosm.Microcosm;
-import mods.microcosm.block.BlockMod;
 import mods.microcosm.block.BlockModOre;
+import mods.microcosm.block.itemblock.ItemBlockCosmicOre;
 import mods.microcosm.microcosm.chimericalfurnace.BlockChimericalAlloyFurnace;
 import mods.microcosm.microcosm.chimericalfurnace.TileChimericalAlloyFurnace;
 import mods.microcosm.util.ISimpleNamed;
@@ -19,16 +19,27 @@ public class ModBlocks
     //We can't register these in preInit, so we store every registered Item in this and register them later.
     public static ArrayList<Block> blocksForModel = new ArrayList<Block>(200);
 
-    public static Block oreTest;
+    public static Block oreCosmic;
+    public static Block oreCopper;
+    public static Block oreZinc;
     public static Block chimericalAlloyFurnace;
 
     public static void init()
     {
-        oreTest = new BlockModOre(Material.ROCK, 3, "ore_test");
-        register(oreTest);
-        OreDictionary.registerOre("oreTest", oreTest);
+        oreCosmic = new BlockModOre(Material.ROCK, 3, "oreCosmic");
+        registerWithoutItemBlock(oreCosmic);
+        GameRegistry.register(new ItemBlockCosmicOre(oreCosmic, 64, 1, ((ISimpleNamed)oreCosmic).getSimpleName()));
+        OreDictionary.registerOre("oreCosmic", oreCosmic);
 
-        chimericalAlloyFurnace = new BlockChimericalAlloyFurnace(Material.IRON, "chimerical_alloy_furnace");
+        oreCopper = new BlockModOre(Material.ROCK, 1, "oreCopper");
+        register(oreCopper);
+        OreDictionary.registerOre("oreCopper", oreCopper);
+
+        oreZinc = new BlockModOre(Material.ROCK, 1, "oreZinc");
+        register(oreZinc);
+        OreDictionary.registerOre("oreZinc", oreZinc);
+
+        chimericalAlloyFurnace = new BlockChimericalAlloyFurnace(Material.IRON, "chimericalAlloyFurnace");
         register(chimericalAlloyFurnace);
     }
 
@@ -42,6 +53,7 @@ public class ModBlocks
         GameRegistry.register(block);
         GameRegistry.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
         blocksForModel.add(block);
+        Microcosm.instance.CREATIVE_TAB.blocksToDisplay.add(block);
     }
 
     /**
@@ -54,6 +66,7 @@ public class ModBlocks
     {
         GameRegistry.register(block);
         blocksForModel.add(block);
+        Microcosm.instance.CREATIVE_TAB.blocksToDisplay.add(block);
     }
 
     public static void initModels()

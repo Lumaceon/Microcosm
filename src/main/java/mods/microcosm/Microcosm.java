@@ -26,7 +26,7 @@ public class Microcosm
     @SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.SERVER_PROXY)
     public static CommonProxy proxy;
 
-    public final CreativeTabs CREATIVE_TAB = new CreativeTabMicrocosm("Microcosm");
+    public final CreativeTabMicrocosm CREATIVE_TAB = new CreativeTabMicrocosm("Microcosm");
 
     @Mod.EventHandler
     public void preInitialize(FMLPreInitializationEvent event)

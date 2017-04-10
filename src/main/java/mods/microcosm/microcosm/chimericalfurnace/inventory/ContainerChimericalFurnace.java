@@ -26,7 +26,7 @@ public class ContainerChimericalFurnace extends ContainerMod
             this.addSlotToContainer(new Slot(playerInventory, l, 59 + l * 18, 142));
 
         for(int i = 0; i < 9; i++)
-            this.addSlotToContainer(new Slot(inventory, i, i*20, 20));
+            this.addSlotToContainer(new Slot(inventory, i, i*22 + 2, 20));
 
         this.onCraftMatrixChanged(inventory);
     }
