@@ -4,9 +4,8 @@ import mods.microcosm.Microcosm;
 import mods.microcosm.util.ISimpleNamed;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.IGrowable;
-import net.minecraftforge.common.IPlantable;
 
-public class BlockModCrops extends BlockCrops implements ISimpleNamed, IGrowable, IPlantable
+public class BlockModCrops extends BlockCrops implements ISimpleNamed, IGrowable
 {
     public String simpleName;
 

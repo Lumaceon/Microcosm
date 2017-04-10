@@ -1,6 +1,7 @@
 package mods.microcosm.init;
 
 import mods.microcosm.Microcosm;
+import mods.microcosm.block.BlockModCrops;
 import mods.microcosm.block.BlockModOre;
 import mods.microcosm.block.itemblock.ItemBlockCosmicOre;
 import mods.microcosm.microcosm.chimericalfurnace.BlockChimericalAlloyFurnace;
@@ -23,6 +24,7 @@ public class ModBlocks
     public static Block oreCopper;
     public static Block oreZinc;
     public static Block chimericalAlloyFurnace;
+    public static BlockModCrops cropBerry;
 
     public static void init()
     {
@@ -41,6 +43,9 @@ public class ModBlocks
 
         chimericalAlloyFurnace = new BlockChimericalAlloyFurnace(Material.IRON, "chimericalAlloyFurnace");
         register(chimericalAlloyFurnace);
+
+        cropBerry = new BlockModCrops("Berry Crop");
+        register(cropBerry);
     }
 
     public static void initTE()
