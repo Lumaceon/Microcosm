@@ -44,6 +44,20 @@ public class ChimericalAlloyRecipes
         return foundItems;
     }
 
+    public static boolean isChimericalAlloyMetal(ItemStack stack)
+    {
+        if(stack == null)
+            return false;
+
+        for(String s : chimericalAlloyMetals)
+        {
+            List<ItemStack> itemList = OreDictionary.getOres(s);
+            if(itemList != null && itemList.size() > 0 && OreDictionary.itemMatches(stack, itemList.get(0), false))
+                return true;
+        }
+        return false;
+    }
+
     public static void register(ChimericalAlloyRecipe recipe) {
         recipes.add(recipe);
     }
@@ -164,15 +178,16 @@ public class ChimericalAlloyRecipes
      * Tries to load experimental alloy recipes from the given String arrays.
      * @return True if these were successfully loaded, false if something went wrong; usually a missing metal.
      */
-    public static boolean loadRecipes(ArrayList<ChimericalAlloyRecipe> recipes)
+    public static boolean areRecipesProperlyLoaded()
     {
         for(ChimericalAlloyRecipe recipe : recipes)
+        {
+            if(recipe.components.length < 6)
+                return false;
             for(String s : recipe.components)
                 if(s == null || !OreDictionary.doesOreNameExist(s))
                     return false;
-
-        //All metals exist at this point; load the recipes and return true.
-        ChimericalAlloyRecipes.recipes = recipes;
+        }
         return true;
     }
 }

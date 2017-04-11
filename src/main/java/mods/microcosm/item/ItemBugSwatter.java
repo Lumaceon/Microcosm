@@ -1,6 +1,5 @@
 package mods.microcosm.item;
 
-import mods.microcosm.microcosm.chimericalfurnace.recipe.ChimericalAlloyRecipes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
@@ -21,13 +20,6 @@ public class ItemBugSwatter extends ItemMod
         worldIn.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ,
                 SoundEvents.ENTITY_EXPERIENCE_ORB_TOUCH, SoundCategory.PLAYERS,
                 0.8F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
-        for(String s : ChimericalAlloyRecipes.getRecipes().get(0).components)
-        {
-            if(s != null)
-                System.out.println(s);
-            else
-                System.out.println("Null");
-        }
 
         return new ActionResult(EnumActionResult.PASS, itemStackIn);
     }

@@ -1,11 +1,8 @@
 package mods.microcosm.init;
 
 import mods.microcosm.Microcosm;
-import mods.microcosm.item.ItemMod;
-import mods.microcosm.item.ItemModSeedFood;
+import mods.microcosm.item.*;
 import mods.microcosm.util.ISimpleNamed;
-import mods.microcosm.item.ItemBugSwatter;
-import mods.microcosm.item.ItemPot;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
@@ -36,6 +33,8 @@ public class ModItems
     public static Item ingotBrass;
     public static Item ingotCopper;
     public static Item ingotCosmic;
+    public static Item ingotExperimental;
+    public static Item ingotLuminium;
     public static Item ingotSteel;
     public static Item ingotZinc;
 
@@ -68,7 +67,9 @@ public class ModItems
         ingotZinc = new ItemMod(64, 100, "ingotZinc");
         ingotBrass = new ItemMod(64, 100, "ingotBrass");
         ingotSteel = new ItemMod(64, 100, "ingotSteel");
+        ingotExperimental = new ItemExperimentalIngot(1, 100, "ingotExperimental");
         ingotAnimatanium = new ItemMod(64, 100, "ingotAnimatanium");
+        ingotLuminium = new ItemMod(64, 100, "ingotLuminium");
 
         register(bugSwatter);
         register(pot);
@@ -87,13 +88,16 @@ public class ModItems
         register(ingotZinc);
         register(ingotBrass);
         register(ingotSteel);
+        register(ingotExperimental);
         register(ingotAnimatanium);
+        register(ingotLuminium);
         OreDictionary.registerOre("ingotCosmic", ingotCosmic);
         OreDictionary.registerOre("ingotCopper", ingotCopper);
         OreDictionary.registerOre("ingotZinc", ingotZinc);
         OreDictionary.registerOre("ingotBrass", ingotBrass);
         OreDictionary.registerOre("ingotSteel", ingotSteel);
         OreDictionary.registerOre("ingotAnimatanium", ingotAnimatanium);
+        OreDictionary.registerOre("ingotLuminium", ingotLuminium);
     }
 
     private static void register(Item item)

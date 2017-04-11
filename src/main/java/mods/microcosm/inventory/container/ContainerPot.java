@@ -5,6 +5,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
 
 public class ContainerPot extends ContainerMod
 {
@@ -18,7 +21,10 @@ public class ContainerPot extends ContainerMod
 
         this.pot = pot;
         this.player = player;
-        mainInventory = new InventoryPot(this, 10, 64, pot);
+        IItemHandler itemHandler = pot.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN);
+        if(itemHandler == null)
+            return;
+        mainInventory = new InventoryPot(this, itemHandler.getSlots(), 64, pot);
 
         int offsetX = 0;
         for(int k = 0; k < 3; ++k)
@@ -27,7 +33,7 @@ public class ContainerPot extends ContainerMod
         for(int l = 0; l < 9; ++l)
             this.addSlotToContainer(new Slot(playerInventory, l, offsetX + l * 18, 142));
 
-        for(int i = 0; i < 9; i++)
+        for(int i = 0; i < itemHandler.getSlots(); i++)
             this.addSlotToContainer(new Slot(mainInventory, i, i*22 + 2, 20));
     }
 }

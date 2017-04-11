@@ -13,8 +13,10 @@ public class Recipes
     }
 
     public static ChimericalAlloyRecipe animataniumRecipe = new ChimericalAlloyRecipe("animatanium", new ItemStack(ModItems.ingotAnimatanium));
+    public static ChimericalAlloyRecipe luminiumRecipe = new ChimericalAlloyRecipe("luminium", new ItemStack(ModItems.ingotLuminium));
     private static void initChimericalAlloyRecipes()
     {
         ChimericalAlloyRecipes.register(animataniumRecipe);
+        ChimericalAlloyRecipes.register(luminiumRecipe);
     }
 }

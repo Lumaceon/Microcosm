@@ -4,6 +4,7 @@ import mods.microcosm.client.GuiHandler;
 import mods.microcosm.creativetab.CreativeTabMicrocosm;
 import mods.microcosm.handler.WorldHandler;
 import mods.microcosm.init.ModBlocks;
+import mods.microcosm.init.ModCapabilities;
 import mods.microcosm.init.ModItems;
 import mods.microcosm.lib.Reference;
 import mods.microcosm.proxy.CommonProxy;
@@ -34,6 +35,7 @@ public class Microcosm
     @Mod.EventHandler
     public void preInitialize(FMLPreInitializationEvent event)
     {
+        ModCapabilities.init();
         ModItems.init();
         ModBlocks.init();
         ModBlocks.initTE();

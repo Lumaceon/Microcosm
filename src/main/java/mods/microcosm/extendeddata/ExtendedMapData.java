@@ -91,6 +91,12 @@ public class ExtendedMapData extends WorldSavedData
                     }
                 }
             }
+            if(!ChimericalAlloyRecipes.areRecipesProperlyLoaded())
+            {
+                ChimericalAlloyRecipes.generateNewRecipes();
+                experimentalAlloyGeneration++;
+                markDirty();
+            }
         }
     }
 }

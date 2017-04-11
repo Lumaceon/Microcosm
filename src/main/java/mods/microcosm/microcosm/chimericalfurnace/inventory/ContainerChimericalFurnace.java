@@ -1,6 +1,8 @@
 package mods.microcosm.microcosm.chimericalfurnace.inventory;
 
 import mods.microcosm.inventory.container.ContainerMod;
+import mods.microcosm.inventory.slot.SlotChimericalAlloyComponent;
+import mods.microcosm.inventory.slot.SlotResult;
 import mods.microcosm.microcosm.chimericalfurnace.TileChimericalAlloyFurnace;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -25,8 +27,9 @@ public class ContainerChimericalFurnace extends ContainerMod
         for(int l = 0; l < 9; ++l)
             this.addSlotToContainer(new Slot(playerInventory, l, 59 + l * 18, 142));
 
-        for(int i = 0; i < 9; i++)
-            this.addSlotToContainer(new Slot(inventory, i, i*22 + 2, 20));
+        for(int i = 0; i < 6; i++)
+            this.addSlotToContainer(new SlotChimericalAlloyComponent(inventory, i, i*22 + 2, 20));
+        this.addSlotToContainer(new SlotResult(inventory, 6, 2*22+11 + 2, 50));
 
         this.onCraftMatrixChanged(inventory);
     }
