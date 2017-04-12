@@ -68,7 +68,11 @@ public class TileChimericalAlloyFurnace extends TileModInventory implements ITic
                     if(inventory[i] == null)
                         return; //All slots must be filled by something
                     else
-                        componentNames[i] = inventory[i].getDisplayName(); //Save the display names.
+                    {
+                        int[] oreIDs = OreDictionary.getOreIDs(inventory[i]);
+                        if(oreIDs.length > 0)
+                            componentNames[i] = OreDictionary.getOreName(oreIDs[0]); //Save the ore name.
+                    }
                 }
 
                 //Consume the ingots.
@@ -77,7 +81,7 @@ public class TileChimericalAlloyFurnace extends TileModInventory implements ITic
 
                 //Create an experimental ingot. Give it the data so it remembers stuff.
                 ItemStack is = new ItemStack(ModItems.ingotExperimental);
-                ItemExperimentalIngot.IExIngotInfoHandler cap = is.getCapability(ItemExperimentalIngot.CapabilityExIngotHandler.CAPABILITY, EnumFacing.DOWN);
+                ItemExperimentalIngot.IExIngotInfoHandler cap = is.getCapability(ItemExperimentalIngot.CapabilityExIngot.CAPABILITY, EnumFacing.DOWN);
                 if(cap != null)
                 {
                     String[] lines = new String[experimentalIngotDisplay.size()];

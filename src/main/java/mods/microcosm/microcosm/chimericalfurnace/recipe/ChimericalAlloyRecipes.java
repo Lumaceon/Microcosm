@@ -11,7 +11,7 @@ public class ChimericalAlloyRecipes
 {
     private static Random random = new Random();
     private static ArrayList<String> defaults = new ArrayList<String>(); //The potentials that 'may' be possible.
-    private static ArrayList<String> chimericalAlloyMetals = new ArrayList<String>(); //The potentials; confirmed to be possible.
+    private static ArrayList<String> chimericalAlloyMetals = new ArrayList<String>(); //The metals confirmed to be possible.
 
     private static ArrayList<ChimericalAlloyRecipe> recipes = new ArrayList<ChimericalAlloyRecipe>();
 

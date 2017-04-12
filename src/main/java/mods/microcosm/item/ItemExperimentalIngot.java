@@ -15,6 +15,7 @@ import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 import org.lwjgl.input.Keyboard;
 
 import java.util.Collections;
@@ -31,14 +32,25 @@ public class ItemExperimentalIngot extends ItemMod
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced)
     {
-        IExIngotInfoHandler cap = stack.getCapability(CapabilityExIngotHandler.CAPABILITY, EnumFacing.DOWN);
+        IExIngotInfoHandler cap = stack.getCapability(CapabilityExIngot.CAPABILITY, EnumFacing.DOWN);
         if(cap != null)
         {
             if(Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT))
             {
                 String[] componentNames = cap.getComponentNames();
-                if(componentNames != null)
-                    Collections.addAll(tooltip, componentNames);
+                if(componentNames == null)
+                    return;
+                String[] display = new String[componentNames.length];
+
+                for(int i = 0; i < componentNames.length; i++)
+                {
+                    List<ItemStack> validItems = OreDictionary.getOres(componentNames[i]);
+                    if(validItems != null && validItems.size() > 0)
+                    {
+                        display[i] = validItems.get(0).getDisplayName();
+                    }
+                }
+                Collections.addAll(tooltip, display);
             }
             else
             {
@@ -62,13 +74,13 @@ public class ItemExperimentalIngot extends ItemMod
 
         @Override
         public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
-            return CapabilityExIngotHandler.CAPABILITY != null && CapabilityExIngotHandler.CAPABILITY == capability;
+            return CapabilityExIngot.CAPABILITY != null && CapabilityExIngot.CAPABILITY == capability;
         }
 
         @Override
         public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
             if(hasCapability(capability, facing))
-                return CapabilityExIngotHandler.CAPABILITY.cast(implementation);
+                return CapabilityExIngot.CAPABILITY.cast(implementation);
             return null;
         }
 
@@ -165,7 +177,7 @@ public class ItemExperimentalIngot extends ItemMod
         }
     }
 
-    public static class CapabilityExIngotHandler
+    public static class CapabilityExIngot
     {
         @CapabilityInject(IExIngotInfoHandler.class)
         public static Capability<IExIngotInfoHandler> CAPABILITY = null;
@@ -191,6 +203,5 @@ public class ItemExperimentalIngot extends ItemMod
                 }
             });
         }
-
     }
 }

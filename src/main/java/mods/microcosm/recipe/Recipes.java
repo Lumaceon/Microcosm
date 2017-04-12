@@ -13,10 +13,14 @@ public class Recipes
     }
 
     public static ChimericalAlloyRecipe animataniumRecipe = new ChimericalAlloyRecipe("animatanium", new ItemStack(ModItems.ingotAnimatanium));
-    public static ChimericalAlloyRecipe luminiumRecipe = new ChimericalAlloyRecipe("luminium", new ItemStack(ModItems.ingotLuminium));
+    public static ChimericalAlloyRecipe alchemiumRecipe = new ChimericalAlloyRecipe("alchemium", new ItemStack(ModItems.ingotAlchemium));
+    public static ChimericalAlloyRecipe dimentiumRecipe = new ChimericalAlloyRecipe("dimentium", new ItemStack(ModItems.ingotDimentium));
+    public static ChimericalAlloyRecipe elementiumRecipe = new ChimericalAlloyRecipe("elementium", new ItemStack(ModItems.ingotElementium));
     private static void initChimericalAlloyRecipes()
     {
         ChimericalAlloyRecipes.register(animataniumRecipe);
-        ChimericalAlloyRecipes.register(luminiumRecipe);
+        ChimericalAlloyRecipes.register(alchemiumRecipe);
+        ChimericalAlloyRecipes.register(dimentiumRecipe);
+        ChimericalAlloyRecipes.register(elementiumRecipe);
     }
 }

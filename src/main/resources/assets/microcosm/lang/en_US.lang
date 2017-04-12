@@ -14,8 +14,11 @@ microcosm:ingotCopper=Copper Ingot
 microcosm:ingotZinc=Zinc Ingot
 microcosm:ingotBrass=Brass Ingot
 microcosm:ingotSteel=Steel Ingot
+microcosm:ingotExperimental=EXPERIMENTAL Ingot
 microcosm:ingotAnimatanium=Animatanium Ingot
-microcosm:ingotLuminium=Luminium Ingot
+microcosm:ingotAlchemium=Alchemium Ingot
+microcosm:ingotDimentium=Dimentium Ingot
+microcosm:ingotElementium=Elementium Ingot
 
 microcosm:bugSwatter=§dBug Swatter
 

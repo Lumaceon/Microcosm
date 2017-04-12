@@ -29,12 +29,14 @@ public class ModItems
 
     public static Item bugSwatter;
 
+    public static Item ingotAlchemium;
     public static Item ingotAnimatanium;
     public static Item ingotBrass;
     public static Item ingotCopper;
     public static Item ingotCosmic;
+    public static Item ingotDimentium;
+    public static Item ingotElementium;
     public static Item ingotExperimental;
-    public static Item ingotLuminium;
     public static Item ingotSteel;
     public static Item ingotZinc;
 
@@ -62,14 +64,16 @@ public class ModItems
         berryWater = new ItemModSeedFood(2, 0.5F, Blocks.BEETROOTS, Blocks.FARMLAND,"berryWater").setAlwaysEdible()
                 .setPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 300, 0), 1F);
 
-        ingotCosmic = new ItemMod(64, 100, "ingotCosmic");
+        ingotCosmic = new ItemCosmicIngot(64, 100, "ingotCosmic");
         ingotCopper = new ItemMod(64, 100, "ingotCopper");
         ingotZinc = new ItemMod(64, 100, "ingotZinc");
         ingotBrass = new ItemMod(64, 100, "ingotBrass");
         ingotSteel = new ItemMod(64, 100, "ingotSteel");
         ingotExperimental = new ItemExperimentalIngot(1, 100, "ingotExperimental");
         ingotAnimatanium = new ItemMod(64, 100, "ingotAnimatanium");
-        ingotLuminium = new ItemMod(64, 100, "ingotLuminium");
+        ingotAlchemium = new ItemMod(64, 100, "ingotAlchemium");
+        ingotDimentium = new ItemMod(64, 100, "ingotDimentium");
+        ingotElementium = new ItemMod(64, 100, "ingotElementium");
 
         register(bugSwatter);
         register(pot);
@@ -83,21 +87,27 @@ public class ModItems
         register(berryStrength);
         register(berryWater);
 
-        register(ingotCosmic);
+        register(ingotCosmic); //Expensive ingot, about as rare as a diamond. Use for mid-to-late-game recipes.
         register(ingotCopper);
         register(ingotZinc);
         register(ingotBrass);
         register(ingotSteel);
+
+        //The following are all chimerical alloys, which are (usually) expensive and hard to get. For powerful recipes.
         register(ingotExperimental);
-        register(ingotAnimatanium);
-        register(ingotLuminium);
+        register(ingotAnimatanium); //For recipes involving life, intelligence, behavior, and the soul.
+        register(ingotAlchemium); //For recipes involving alchemy, liquid, potions, and magical (or general) change.
+        register(ingotDimentium); //For recipes involving mass storage (bigger on the inside). Also anything else to do with dimensional weirdness.
+        register(ingotElementium); //For recipes involving elements and elemental magic. Alternatively, just magic in general.
         OreDictionary.registerOre("ingotCosmic", ingotCosmic);
         OreDictionary.registerOre("ingotCopper", ingotCopper);
         OreDictionary.registerOre("ingotZinc", ingotZinc);
         OreDictionary.registerOre("ingotBrass", ingotBrass);
         OreDictionary.registerOre("ingotSteel", ingotSteel);
         OreDictionary.registerOre("ingotAnimatanium", ingotAnimatanium);
-        OreDictionary.registerOre("ingotLuminium", ingotLuminium);
+        OreDictionary.registerOre("ingotAlchemium", ingotAlchemium);
+        OreDictionary.registerOre("ingotDimentium", ingotDimentium);
+        OreDictionary.registerOre("ingotElementium", ingotElementium);
     }
 
     private static void register(Item item)

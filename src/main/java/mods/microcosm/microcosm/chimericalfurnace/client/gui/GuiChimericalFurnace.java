@@ -33,16 +33,6 @@ public class GuiChimericalFurnace extends GuiContainer
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         Minecraft.getMinecraft().renderEngine.bindTexture(Textures.TEST_GUI);
         this.drawWholeTexturedRect(this.guiLeft + 1, this.guiTop + 19, 128, 18);
-        List<String> list = new ArrayList<String>();
-        ItemStack[] inv = new ItemStack[6];
-        for(int i = 0; i < 6; i++)
-        {
-            inv[i] = tile.getStackInSlot(i);
-        }
-        list.add("Valid metals: " + ChimericalAlloyRecipes.getNumberOfValidItems(Recipes.animataniumRecipe, inv));
-        for(String s : ChimericalAlloyRecipes.getRecipes().get(0).components)
-        list.add(s);
-        this.drawHoveringText(list, 100, 100);
     }
 
     /**
