@@ -1,5 +1,6 @@
-package mods.microcosm.api.entity;
+package mods.microcosm.api.capability;
 
+import mods.microcosm.api.entity.Schema;
 import net.minecraft.nbt.NBTTagCompound;
 
 public interface IEntityAIOverride

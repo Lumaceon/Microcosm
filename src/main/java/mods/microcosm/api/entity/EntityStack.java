@@ -1,5 +1,6 @@
 package mods.microcosm.api.entity;
 
+import mods.microcosm.api.capability.CapabilityEntityAIOverride;
 import mods.microcosm.lib.Reference;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
@@ -14,13 +15,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * In a similar fashion to ItemStack for items and FluidStack for fluids, this class is meant to contain the 'inventory'
- * representation of an entity. Generally, an EntityStack instance is used to load only information that is likely to be
- * accessed frequently.
+ * This class is meant to contain the 'inventory' representation of an entity.
  *
- * Check Entity#writeToNBT for potential information to add to a child EntityStack class. Child classes should ALWAYS
- * override getEntityStackClassID. Additionally, one should register child classes with registerCustomEntityStackClass,
- * so they can be saved and loaded properly.
+ * An EntityStack is created via the NBT data of the entity, so pass [the entity].serializeNBT() into the constructor.
+ * The primary benefit of EntityStack is to store specific data loaded from NBT, such as the entity's name, so NBT need
+ * not be consulted every time you need to access it.
+ *
+ * For example: if, every tick, you need to get the entity's name, constructing an EntityStack will load/store that name
+ * and save/load it only as necessary. If you instead needed to know its health, you'd make a subclass of EntityStack,
+ * register it with EntityStack.registerCustomEntityStackClass, and have its constructor load the health from the NBT
+ * tag passed in.
  */
 @SuppressWarnings("deprecation")
 public class EntityStack

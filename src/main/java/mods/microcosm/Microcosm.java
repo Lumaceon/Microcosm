@@ -2,6 +2,7 @@ package mods.microcosm;
 
 import mods.microcosm.client.GuiHandler;
 import mods.microcosm.creativetab.CreativeTabMicrocosm;
+import mods.microcosm.handler.PlayerHandler;
 import mods.microcosm.handler.WorldHandler;
 import mods.microcosm.init.ModBlocks;
 import mods.microcosm.init.ModCapabilities;
@@ -53,6 +54,7 @@ public class Microcosm
 
         Recipes.init();
         MinecraftForge.EVENT_BUS.register(new WorldHandler());
+        MinecraftForge.EVENT_BUS.register(new PlayerHandler());
 
         new GuiHandler();
 

@@ -24,6 +24,9 @@ microcosm:bugSwatter=§dBug Swatter
 
 microcosm:pot=§ePot
 
+microcosm:mobCapsule=Mob Capsule
+microcosm:captureGun=Rifle of Encapsulation
+
 #Block
 
 microcosm:oreCopper.name=Copper Ore

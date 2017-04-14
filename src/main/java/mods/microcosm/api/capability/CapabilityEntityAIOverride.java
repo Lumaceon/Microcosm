@@ -1,4 +1,4 @@
-package mods.microcosm.api.entity;
+package mods.microcosm.api.capability;
 
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;

@@ -2,6 +2,7 @@ package mods.microcosm.init;
 
 import mods.microcosm.Microcosm;
 import mods.microcosm.item.*;
+import mods.microcosm.item.weapon.ItemCaptureGun;
 import mods.microcosm.util.ISimpleNamed;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
@@ -41,6 +42,8 @@ public class ModItems
     public static Item ingotZinc;
 
     public static Item pot;
+    public static Item mobCapsule;
+    public static Item captureGun;
 
     public static void init()
     {
@@ -75,6 +78,9 @@ public class ModItems
         ingotDimentium = new ItemMod(64, 100, "ingotDimentium");
         ingotElementium = new ItemMod(64, 100, "ingotElementium");
 
+        mobCapsule = new ItemMobCapsule(1, 100, "mobCapsule");
+        captureGun = new ItemCaptureGun("captureGun");
+
         register(bugSwatter);
         register(pot);
 
@@ -99,6 +105,9 @@ public class ModItems
         register(ingotAlchemium); //For recipes involving alchemy, liquid, potions, and magical (or general) change.
         register(ingotDimentium); //For recipes involving mass storage (bigger on the inside). Also anything else to do with dimensional weirdness.
         register(ingotElementium); //For recipes involving elements and elemental magic. Alternatively, just magic in general.
+
+        register(mobCapsule);
+        register(captureGun);
         OreDictionary.registerOre("ingotCosmic", ingotCosmic);
         OreDictionary.registerOre("ingotCopper", ingotCopper);
         OreDictionary.registerOre("ingotZinc", ingotZinc);
