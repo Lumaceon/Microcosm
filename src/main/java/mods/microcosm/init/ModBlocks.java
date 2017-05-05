@@ -24,7 +24,7 @@ public class ModBlocks
     public static Block oreCopper;
     public static Block oreZinc;
     public static Block chimericalAlloyFurnace;
-    public static BlockModCrops cropBerry;
+    public static BlockModCrops cropFireBerry;
 
     public static void init()
     {
@@ -44,8 +44,8 @@ public class ModBlocks
         chimericalAlloyFurnace = new BlockChimericalAlloyFurnace(Material.IRON, "chimericalAlloyFurnace");
         register(chimericalAlloyFurnace);
 
-        cropBerry = new BlockModCrops("Berry Crop");
-        register(cropBerry);
+        cropFireBerry = new BlockModCrops("Fire Berry Crop");
+        register(cropFireBerry);
     }
 
     public static void initTE()

@@ -5,12 +5,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import static mods.microcosm.init.ModBlocks.*;
-import static mods.microcosm.init.ModItems.*;
 
 public class CreativeTabMicrocosm extends CreativeTabs
 {
@@ -18,14 +14,14 @@ public class CreativeTabMicrocosm extends CreativeTabs
     public ArrayList<Item> itemsToDisplay = new ArrayList<Item>();
     public ArrayList<Block> blocksToDisplay = new ArrayList<Block>();
 
-
     public CreativeTabMicrocosm(String label) {
         super(label);
+        setBackgroundImageName("item_search.png");
     }
 
     @Override
     public Item getTabIconItem() {
-        return ModItems.bugSwatter;
+        return ModItems.pot;
     }
 
     @Override

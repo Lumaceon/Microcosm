@@ -52,7 +52,7 @@ public class ModItems
 
         berryBoost = new ItemModSeedFood(2, 0.5F, Blocks.BEETROOTS, Blocks.FARMLAND,"berryBoost").setAlwaysEdible()
                 .setPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 300, 0), 1F);
-        berryFire = new ItemModSeedFood(2, 0.5F, ModBlocks.cropBerry, Blocks.FARMLAND,"berryFire").setAlwaysEdible()
+        berryFire = new ItemModSeedFood(2, 0.5F, ModBlocks.cropFireBerry, Blocks.FARMLAND,"berryFire").setAlwaysEdible()
                 .setPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 300, 0), 1F);
         berryHasty = new ItemModSeedFood(2, 0.5F, Blocks.BEETROOTS, Blocks.FARMLAND,"berryHasty").setAlwaysEdible()
                 .setPotionEffect(new PotionEffect(MobEffects.HASTE, 300, 0), 1F);
