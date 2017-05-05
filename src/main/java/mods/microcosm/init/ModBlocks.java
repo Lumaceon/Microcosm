@@ -3,6 +3,7 @@ package mods.microcosm.init;
 import mods.microcosm.Microcosm;
 import mods.microcosm.block.BlockModCrops;
 import mods.microcosm.block.BlockModOre;
+import mods.microcosm.block.crops.*;
 import mods.microcosm.block.itemblock.ItemBlockCosmicOre;
 import mods.microcosm.microcosm.chimericalfurnace.BlockChimericalAlloyFurnace;
 import mods.microcosm.microcosm.chimericalfurnace.TileChimericalAlloyFurnace;
@@ -15,16 +16,25 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.ArrayList;
 
+import static mods.microcosm.init.ModItems.berryBoost;
+import static mods.microcosm.init.ModItems.berryFire;
+import static mods.microcosm.init.ModItems.berryHasty;
+import static mods.microcosm.init.ModItems.berryNight;
+
 public class ModBlocks
 {
-    //We can't register these in preInit, so we store every registered Item in this and register them later.
+    // We can't register these in preInit, so we store every registered Item in this and register them later.
     public static ArrayList<Block> blocksForModel = new ArrayList<Block>(200);
 
     public static Block oreCosmic;
     public static Block oreCopper;
     public static Block oreZinc;
     public static Block chimericalAlloyFurnace;
-    public static BlockModCrops cropFireBerry;
+
+    public static BlockModCrops blockCropBerryBoost;
+    public static BlockModCrops blockCropBerryFire;
+    public static BlockModCrops blockCropBerryHasty;
+    public static BlockModCrops blockCropBerryNight;
 
     public static void init()
     {
@@ -44,8 +54,10 @@ public class ModBlocks
         chimericalAlloyFurnace = new BlockChimericalAlloyFurnace(Material.IRON, "chimericalAlloyFurnace");
         register(chimericalAlloyFurnace);
 
-        cropFireBerry = new BlockModCrops("Fire Berry Crop");
-        register(cropFireBerry);
+        blockCropBerryBoost = new BlockCropBerryBoost("Boost Berry Crop", berryBoost);
+        blockCropBerryFire = new BlockCropBerryFire("Fire Berry Crop", berryFire);
+        blockCropBerryHasty = new BlockCropBerryHasty("Hasty Berry Crop", berryHasty);
+        blockCropBerryNight = new BlockCropBerryNight("Night Berry Crop", berryNight);
     }
 
     public static void initTE()

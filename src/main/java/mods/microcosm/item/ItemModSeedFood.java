@@ -1,6 +1,7 @@
 package mods.microcosm.item;
 
 import mods.microcosm.Microcosm;
+import mods.microcosm.init.ModBlocks;
 import mods.microcosm.util.ISimpleNamed;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemSeedFood;

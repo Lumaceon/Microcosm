@@ -11,7 +11,6 @@ public class BlockModCrops extends BlockCrops implements ISimpleNamed, IGrowable
 
     public BlockModCrops(String name) {
         super();
-
         this.setCreativeTab(Microcosm.instance.CREATIVE_TAB);
         this.simpleName = name;
         this.setRegistryName(name);

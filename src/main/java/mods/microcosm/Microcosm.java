@@ -37,9 +37,9 @@ public class Microcosm
     public void preInitialize(FMLPreInitializationEvent event)
     {
         ModCapabilities.init();
-        ModItems.init();
         ModBlocks.init();
         ModBlocks.initTE();
+        ModItems.init();
 
         ChimericalAlloyRecipes.preInit();
 
