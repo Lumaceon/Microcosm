@@ -1,25 +1,21 @@
 package mods.microcosm.init;
 
 import mods.microcosm.Microcosm;
-import mods.microcosm.block.BlockModCrops;
 import mods.microcosm.block.BlockModOre;
 import mods.microcosm.block.crops.*;
 import mods.microcosm.block.itemblock.ItemBlockCosmicOre;
 import mods.microcosm.microcosm.chimericalfurnace.BlockChimericalAlloyFurnace;
 import mods.microcosm.microcosm.chimericalfurnace.TileChimericalAlloyFurnace;
 import mods.microcosm.util.ISimpleNamed;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemBlock;
+
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.ArrayList;
-
-import static mods.microcosm.init.ModItems.berryBoost;
-import static mods.microcosm.init.ModItems.berryFire;
-import static mods.microcosm.init.ModItems.berryHasty;
-import static mods.microcosm.init.ModItems.berryNight;
 
 public class ModBlocks
 {
@@ -31,10 +27,14 @@ public class ModBlocks
     public static Block oreZinc;
     public static Block chimericalAlloyFurnace;
 
-    public static BlockModCrops blockCropBerryBoost;
-    public static BlockModCrops blockCropBerryFire;
-    public static BlockModCrops blockCropBerryHasty;
-    public static BlockModCrops blockCropBerryNight;
+    public static BlockCropBerry blockCropBerryBoost;
+    public static BlockCropBerry blockCropBerryFire;
+    public static BlockCropBerry blockCropBerryHasty;
+    public static BlockCropBerry blockCropBerryNight;
+    public static BlockCropBerry blockCropBerryRegen;
+    public static BlockCropBerry blockCropBerrySpeed;
+    public static BlockCropBerry blockCropBerryStrength;
+    public static BlockCropBerry blockCropBerryWater;
 
     public static void init()
     {
@@ -54,10 +54,14 @@ public class ModBlocks
         chimericalAlloyFurnace = new BlockChimericalAlloyFurnace(Material.IRON, "chimericalAlloyFurnace");
         register(chimericalAlloyFurnace);
 
-        blockCropBerryBoost = new BlockCropBerryBoost("Boost Berry Crop", berryBoost);
-        blockCropBerryFire = new BlockCropBerryFire("Fire Berry Crop", berryFire);
-        blockCropBerryHasty = new BlockCropBerryHasty("Hasty Berry Crop", berryHasty);
-        blockCropBerryNight = new BlockCropBerryNight("Night Berry Crop", berryNight);
+        blockCropBerryBoost    = new BlockCropBerry("");
+        blockCropBerryFire     = new BlockCropBerry("");
+        blockCropBerryHasty    = new BlockCropBerry("");
+        blockCropBerryNight    = new BlockCropBerry("");
+        blockCropBerryRegen    = new BlockCropBerry("");
+        blockCropBerrySpeed    = new BlockCropBerry("");
+        blockCropBerryStrength = new BlockCropBerry("");
+        blockCropBerryWater    = new BlockCropBerry("");
     }
 
     public static void initTE()

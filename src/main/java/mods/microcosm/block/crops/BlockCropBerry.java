@@ -1,6 +1,7 @@
 package mods.microcosm.block.crops;
 
 import mods.microcosm.block.BlockModCrops;
+import mods.microcosm.item.ItemModSeedFood;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -21,8 +22,11 @@ public class BlockCropBerry extends BlockModCrops
             new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5625D, 1.0D)
     };
 
-    public BlockCropBerry(String name, Item berry) {
+    public BlockCropBerry(String name) {
         super(name);
+    }
+
+    public void setBerry(Item berry){
         this.berry = berry;
     }
 

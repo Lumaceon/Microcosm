@@ -1,7 +1,6 @@
 package mods.microcosm.init;
 
 import mods.microcosm.Microcosm;
-import mods.microcosm.block.crops.*;
 import mods.microcosm.item.*;
 import mods.microcosm.item.armor.*;
 import mods.microcosm.item.weapon.*;
@@ -25,20 +24,23 @@ public class ModItems
     // We can't register these in preInit, so we store every registered Item in this and register them later.
     public static ArrayList<Item> itemsForModel = new ArrayList<Item>();
 
+    // special items
     public static Item bugSwatter;
     public static Item captureGun;
     public static Item pot;
     public static Item mobCapsule;
 
+    // berries
     public static Item berryBoost;
     public static Item berryFire;
     public static Item berryHasty;
-    public static Item berryNight;/*
+    public static Item berryNight;
     public static Item berryRegen;
     public static Item berrySpeed;
     public static Item berryStrength;
     public static Item berryWater;
-*/
+
+    // ingots
     public static Item ingotAlchemium;
     public static Item ingotAnimatanium;
     public static Item ingotBrass;
@@ -50,6 +52,7 @@ public class ModItems
     public static Item ingotSteel;
     public static Item ingotZinc;
 
+    // armor
     public static Item armorGundamHead;
     public static Item armorGundamChest;
     public static Item armorGundamLegs;
@@ -62,6 +65,7 @@ public class ModItems
         register(bugSwatter);
         register(pot);
 
+        // berries
         berryBoost =
                 new ItemModSeedFood(2, 0.5F,
                         blockCropBerryBoost,
@@ -90,45 +94,53 @@ public class ModItems
                         "berryNight")
                         .setAlwaysEdible()
                         .setPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 300, 0), 1F);
-                        /*
-        berryRegen    = new ItemModSeedFood(2, 0.5F,
-                        Blocks.BEETROOTS,
+
+        berryRegen =
+                new ItemModSeedFood(2, 0.5F,
+                        blockCropBerryRegen,
                         Blocks.FARMLAND,
                         "berryRegen")
                         .setAlwaysEdible()
                         .setPotionEffect(new PotionEffect(MobEffects.REGENERATION, 300, 0), 1F);
-        berrySpeed    = new ItemModSeedFood(2, 0.5F,
-                        Blocks.BEETROOTS,
+        berrySpeed =
+                new ItemModSeedFood(2, 0.5F,
+                        blockCropBerrySpeed,
                         Blocks.FARMLAND,
                         "berrySpeed")
                         .setAlwaysEdible()
                         .setPotionEffect(new PotionEffect(MobEffects.SPEED, 300, 0), 1F);
-        berryStrength = new ItemModSeedFood(2, 0.5F,
-                        Blocks.BEETROOTS,
+        berryStrength =
+                new ItemModSeedFood(2, 0.5F,
+                        blockCropBerryStrength,
                         Blocks.FARMLAND,
                         "berryStrength")
                         .setAlwaysEdible()
                         .setPotionEffect(new PotionEffect(MobEffects.STRENGTH, 300, 0), 1F);
-        berryWater    = new ItemModSeedFood(2, 0.5F,
-                        Blocks.BEETROOTS,
+        berryWater =
+                new ItemModSeedFood(2, 0.5F,
+                        blockCropBerryWater,
                         Blocks.FARMLAND,
                         "berryWater")
                         .setAlwaysEdible()
-                        .setPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 300, 0), 1F);*/
+                        .setPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 300, 0), 1F);
         register(berryBoost);
         register(berryFire);
         register(berryHasty);
-        register(berryNight);/*
+        register(berryNight);
         register(berryRegen);
         register(berrySpeed);
         register(berryStrength);
         register(berryWater);
-        */
-        BlockCropBerryBoost.setBerry(berryBoost);
-        BlockCropBerryFire.setBerry(berryFire);
-        BlockCropBerryHasty.setBerry(berryHasty);
-        BlockCropBerryNight.setBerry(berryNight);
+        blockCropBerryBoost.setBerry(berryBoost);
+        blockCropBerryFire.setBerry(berryFire);
+        blockCropBerryHasty.setBerry(berryHasty);
+        blockCropBerryNight.setBerry(berryNight);
+        blockCropBerryRegen.setBerry(berryRegen);
+        blockCropBerrySpeed.setBerry(berrySpeed);
+        blockCropBerryStrength.setBerry(berryStrength);
+        blockCropBerryWater.setBerry(berryWater);
 
+        // ingots
         ingotBrass  = new ItemMod(64, 100, "ingotBrass");
         ingotCopper = new ItemMod(64, 100, "ingotCopper");
         ingotCosmic = new ItemCosmicIngot(64, 100, "ingotCosmic");
@@ -160,6 +172,7 @@ public class ModItems
         OreDictionary.registerOre("ingotDimentium", ingotDimentium);
         OreDictionary.registerOre("ingotElementium", ingotElementium);
 
+        // armor
         armorGundamHead  = new ItemModArmor(ItemArmor.ArmorMaterial.DIAMOND, 3, EntityEquipmentSlot.HEAD, "armorGundamHead");
         armorGundamChest = new ItemModArmor(ItemArmor.ArmorMaterial.DIAMOND, 3, EntityEquipmentSlot.CHEST, "armorGundamChest");
         armorGundamLegs  = new ItemModArmor(ItemArmor.ArmorMaterial.DIAMOND, 3, EntityEquipmentSlot.LEGS, "armorGundamLegs");
@@ -169,6 +182,7 @@ public class ModItems
         register(armorGundamLegs);
         register(armorGundamFeet);
 
+        // special items
         captureGun = new ItemCaptureGun("captureGun");
         mobCapsule = new ItemMobCapsule(1, 100, "mobCapsule");
         register(captureGun);
