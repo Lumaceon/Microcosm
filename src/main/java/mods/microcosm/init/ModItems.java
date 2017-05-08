@@ -24,39 +24,40 @@ public class ModItems
     // We can't register these in preInit, so we store every registered Item in this and register them later.
     public static ArrayList<Item> itemsForModel = new ArrayList<Item>();
 
-    // special items
-    public static Item bugSwatter;
-    public static Item captureGun;
-    public static Item pot;
-    public static Item mobCapsule;
+    public static Item
+            // special items
+            bugSwatter,
+            captureGun,
+            pot,
+            mobCapsule,
 
-    // berries
-    public static Item berryBoost;
-    public static Item berryFire;
-    public static Item berryHasty;
-    public static Item berryNight;
-    public static Item berryRegen;
-    public static Item berrySpeed;
-    public static Item berryStrength;
-    public static Item berryWater;
+            // berries
+            berryBoost,
+            berryFire,
+            berryHasty,
+            berryNight,
+            berryRegen,
+            berrySpeed,
+            berryStrength,
+            berryWater,
 
-    // ingots
-    public static Item ingotAlchemium;
-    public static Item ingotAnimatanium;
-    public static Item ingotBrass;
-    public static Item ingotCopper;
-    public static Item ingotCosmic;
-    public static Item ingotDimentium;
-    public static Item ingotElementium;
-    public static Item ingotExperimental;
-    public static Item ingotSteel;
-    public static Item ingotZinc;
+            // ingots
+            ingotAlchemium,
+            ingotAnimatanium,
+            ingotBrass,
+            ingotCopper,
+            ingotCosmic,
+            ingotDimentium,
+            ingotElementium,
+            ingotExperimental,
+            ingotSteel,
+            ingotZinc,
 
-    // armor
-    public static Item armorGundamHead;
-    public static Item armorGundamChest;
-    public static Item armorGundamLegs;
-    public static Item armorGundamFeet;
+            // armor
+            armorGundamHead,
+            armorGundamChest,
+            armorGundamLegs,
+            armorGundamFeet;
 
     public static void init()
     {

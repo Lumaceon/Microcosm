@@ -22,54 +22,63 @@ public class ModBlocks
     // We can't register these in preInit, so we store every registered Item in this and register them later.
     public static ArrayList<Block> blocksForModel = new ArrayList<Block>(200);
 
-    public static Block oreCosmic;
-    public static Block oreCopper;
-    public static Block oreZinc;
-    public static Block chimericalAlloyFurnace;
+    public static Block
+            chimericalAlloyFurnace,
+            oreCosmic,
+            oreCopper,
+            oreZinc;
 
-    public static BlockCropBerry blockCropBerryBoost;
-    public static BlockCropBerry blockCropBerryFire;
-    public static BlockCropBerry blockCropBerryHasty;
-    public static BlockCropBerry blockCropBerryNight;
-    public static BlockCropBerry blockCropBerryRegen;
-    public static BlockCropBerry blockCropBerrySpeed;
-    public static BlockCropBerry blockCropBerryStrength;
-    public static BlockCropBerry blockCropBerryWater;
+    public static BlockCropBerry
+            blockCropBerryBoost,
+            blockCropBerryFire,
+            blockCropBerryHasty,
+            blockCropBerryNight,
+            blockCropBerryRegen,
+            blockCropBerrySpeed,
+            blockCropBerryStrength,
+            blockCropBerryWater;
 
     public static void init()
     {
+        // alphabetical inits
+        oreCopper = new BlockModOre(Material.ROCK, 1, "oreCopper");
         oreCosmic = new BlockModOre(Material.ROCK, 3, "oreCosmic");
+        oreZinc   = new BlockModOre(Material.ROCK, 1, "oreZinc");
+
+        // alphabetical normal registrations
+        register(oreCopper);
+        register(oreZinc);
+
+        // alphabetical special registrations
         registerWithoutItemBlock(oreCosmic);
         GameRegistry.register(new ItemBlockCosmicOre(oreCosmic, 64, 1, ((ISimpleNamed)oreCosmic).getSimpleName()));
-        OreDictionary.registerOre("oreCosmic", oreCosmic);
 
-        oreCopper = new BlockModOre(Material.ROCK, 1, "oreCopper");
-        register(oreCopper);
+        // alphabetical oredict registrations
         OreDictionary.registerOre("oreCopper", oreCopper);
-
-        oreZinc = new BlockModOre(Material.ROCK, 1, "oreZinc");
-        register(oreZinc);
+        OreDictionary.registerOre("oreCosmic", oreCosmic);
         OreDictionary.registerOre("oreZinc", oreZinc);
 
+        // TE's
         chimericalAlloyFurnace = new BlockChimericalAlloyFurnace(Material.IRON, "chimericalAlloyFurnace");
         register(chimericalAlloyFurnace);
 
+        // berry inits & registrations
         blockCropBerryBoost    = new BlockCropBerry("blockCropBerryBoost");
-        blockCropBerryFire     = new BlockCropBerry("");
-        blockCropBerryHasty    = new BlockCropBerry("");
-        blockCropBerryNight    = new BlockCropBerry("");
-        blockCropBerryRegen    = new BlockCropBerry("");
-        blockCropBerrySpeed    = new BlockCropBerry("");
-        blockCropBerryStrength = new BlockCropBerry("");
-        blockCropBerryWater    = new BlockCropBerry("");
+        blockCropBerryFire     = new BlockCropBerry("blockCropBerryFire");
+        blockCropBerryHasty    = new BlockCropBerry("blockCropBerryHasty");
+        blockCropBerryNight    = new BlockCropBerry("blockCropBerryNight");
+        blockCropBerryRegen    = new BlockCropBerry("blockCropBerryRegen");
+        blockCropBerrySpeed    = new BlockCropBerry("blockCropBerrySpeed");
+        blockCropBerryStrength = new BlockCropBerry("blockCropBerryStrength");
+        blockCropBerryWater    = new BlockCropBerry("blockCropBerryWater");
         registerTechnical(blockCropBerryBoost);/*
-        registerWithoutItemBlock(blockCropBerryFire);
-        registerWithoutItemBlock(blockCropBerryHasty);
-        registerWithoutItemBlock(blockCropBerryNight);
-        registerWithoutItemBlock(blockCropBerryRegen);
-        registerWithoutItemBlock(blockCropBerrySpeed);
-        registerWithoutItemBlock(blockCropBerryStrength);
-        registerWithoutItemBlock(blockCropBerryWater);*/
+        registerTechnical(blockCropBerryFire);
+        registerTechnical(blockCropBerryHasty);
+        registerTechnical(blockCropBerryNight);
+        registerTechnical(blockCropBerryRegen);
+        registerTechnical(blockCropBerrySpeed);
+        registerTechnical(blockCropBerryStrength);
+        registerTechnical(blockCropBerryWater);*/
     }
 
     public static void initTE()
@@ -86,7 +95,7 @@ public class ModBlocks
     }
 
     /**
-     * By default, register also includes an ItemBlock (blocks are held in the inventory as ItemBlocks, which extend
+     * By default, register also includes an ItemBlock (block are held in the inventory as ItemBlocks, which extend
      * Item). This will skip the ItemBlock and only register the Block, making it unable to be held in the inventory.
      *
      * Generally you would want to use this when you want to register your own custom ItemBlock for the block.
@@ -100,7 +109,7 @@ public class ModBlocks
 
     /**
      * Registers a block without adding it to the creative menu.
-     * Used for technical blocks or things to keep hidden.
+     * Used for technical block or things to keep hidden.
      * An even more skimmed-down version of the above method.
      * @param block
      */
