@@ -1,13 +1,14 @@
 package mods.microcosm.block.crops;
 
 import mods.microcosm.block.BlockModCrops;
+import mods.microcosm.util.ISimpleNamed;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
-public class BlockCropBerry extends BlockModCrops
+public class BlockCropBerry extends BlockModCrops implements ISimpleNamed
 {
     private Item berry;
     private static final AxisAlignedBB[] BERRY_CROP = new AxisAlignedBB[] {

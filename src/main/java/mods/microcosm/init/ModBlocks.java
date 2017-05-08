@@ -54,8 +54,7 @@ public class ModBlocks
         chimericalAlloyFurnace = new BlockChimericalAlloyFurnace(Material.IRON, "chimericalAlloyFurnace");
         register(chimericalAlloyFurnace);
 
-        // these don't need a name, nor should they be registered.
-        blockCropBerryBoost    = new BlockCropBerry("");
+        blockCropBerryBoost    = new BlockCropBerry("blockCropBerryBoost");
         blockCropBerryFire     = new BlockCropBerry("");
         blockCropBerryHasty    = new BlockCropBerry("");
         blockCropBerryNight    = new BlockCropBerry("");
@@ -63,6 +62,14 @@ public class ModBlocks
         blockCropBerrySpeed    = new BlockCropBerry("");
         blockCropBerryStrength = new BlockCropBerry("");
         blockCropBerryWater    = new BlockCropBerry("");
+        registerTechnical(blockCropBerryBoost);/*
+        registerWithoutItemBlock(blockCropBerryFire);
+        registerWithoutItemBlock(blockCropBerryHasty);
+        registerWithoutItemBlock(blockCropBerryNight);
+        registerWithoutItemBlock(blockCropBerryRegen);
+        registerWithoutItemBlock(blockCropBerrySpeed);
+        registerWithoutItemBlock(blockCropBerryStrength);
+        registerWithoutItemBlock(blockCropBerryWater);*/
     }
 
     public static void initTE()
@@ -89,6 +96,18 @@ public class ModBlocks
         GameRegistry.register(block);
         blocksForModel.add(block);
         Microcosm.instance.CREATIVE_TAB.blocksToDisplay.add(block);
+    }
+
+    /**
+     * Registers a block without adding it to the creative menu.
+     * Used for technical blocks or things to keep hidden.
+     * An even more skimmed-down version of the above method.
+     * @param block
+     */
+    private static void registerTechnical(Block block)
+    {
+        GameRegistry.register(block);
+        blocksForModel.add(block);
     }
 
     public static void initModels()

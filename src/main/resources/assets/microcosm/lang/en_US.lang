@@ -34,6 +34,8 @@ microcosm:oreZinc.name=Zinc Ore
 microcosm:oreCosmic=Cosmic Ore
 microcosm:chimericalAlloyFurnace.name=Chimerical Alloy Furnace
 
+microcosm:blockblockCropBerryBoost=Boost Berry Bush
+
 #Misc Localizations
 itemGroup.Microcosm=Microcosm
 key.microcosm.category=Microcosm
