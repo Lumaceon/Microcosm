@@ -4,12 +4,14 @@ import mods.microcosm.init.ModItems;
 import mods.microcosm.microcosm.chimericalfurnace.recipe.ChimericalAlloyRecipe;
 import mods.microcosm.microcosm.chimericalfurnace.recipe.ChimericalAlloyRecipes;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class Recipes
 {
     public static void init()
     {
         initChimericalAlloyRecipes();
+        initCraftingRecipes();
     }
 
     public static ChimericalAlloyRecipe animataniumRecipe = new ChimericalAlloyRecipe("animatanium", new ItemStack(ModItems.ingotAnimatanium));
@@ -22,5 +24,11 @@ public class Recipes
         ChimericalAlloyRecipes.register(alchemiumRecipe);
         ChimericalAlloyRecipes.register(dimentiumRecipe);
         ChimericalAlloyRecipes.register(elementiumRecipe);
+    }
+
+    private static void initCraftingRecipes(){
+        GameRegistry.addRecipe(new ItemStack(ModItems.pot),
+                "B B","BBB",
+                'B', ModItems.ingotBrass);
     }
 }

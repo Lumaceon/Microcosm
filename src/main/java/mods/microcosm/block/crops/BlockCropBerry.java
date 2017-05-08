@@ -1,7 +1,6 @@
 package mods.microcosm.block.crops;
 
 import mods.microcosm.block.BlockModCrops;
-import mods.microcosm.item.ItemModSeedFood;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.AxisAlignedBB;

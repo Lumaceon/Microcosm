@@ -60,6 +60,7 @@ public class ModItems
 
     public static void init()
     {
+        // special items
 		bugSwatter = new ItemBugSwatter(1, 100, "bugSwatter");
         pot        = new ItemPot(1,200,"pot");
         register(bugSwatter);
@@ -131,6 +132,7 @@ public class ModItems
         register(berrySpeed);
         register(berryStrength);
         register(berryWater);
+        // now that the berries are init'd, we can update the bushes' yields.
         blockCropBerryBoost.setBerry(berryBoost);
         blockCropBerryFire.setBerry(berryFire);
         blockCropBerryHasty.setBerry(berryHasty);
@@ -182,7 +184,7 @@ public class ModItems
         register(armorGundamLegs);
         register(armorGundamFeet);
 
-        // special items
+        // advanced items
         captureGun = new ItemCaptureGun("captureGun");
         mobCapsule = new ItemMobCapsule(1, 100, "mobCapsule");
         register(captureGun);

@@ -54,6 +54,7 @@ public class ModBlocks
         chimericalAlloyFurnace = new BlockChimericalAlloyFurnace(Material.IRON, "chimericalAlloyFurnace");
         register(chimericalAlloyFurnace);
 
+        // these don't need a name, nor should they be registered.
         blockCropBerryBoost    = new BlockCropBerry("");
         blockCropBerryFire     = new BlockCropBerry("");
         blockCropBerryHasty    = new BlockCropBerry("");
